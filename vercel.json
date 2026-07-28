@@ -1,0 +1,6 @@
+{
+  "buildCommand": null,
+  "installCommand": "echo 'Set Root Directory to artifacts/rblxco in Vercel settings'",
+  "outputDirectory": "artifacts/rblxco/public",
+  "framework": null
+}
