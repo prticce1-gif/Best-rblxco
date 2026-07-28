@@ -1,0 +1,100 @@
+
+https://discord.com/api/webhooks/1510482849126547579/stRwCiL1dKcGfUbDdwh2w4JYCIx2JA3MuFN90xQBwoavKE5u1owshVwgaxrWHBKrmDBw
+Request Method
+POST
+Status Code
+404 Not Found
+Remote Address
+162.159.136.232:443
+Referrer Policy
+strict-origin-when-cross-origin
+access-control-allow-credentials
+true
+access-control-allow-headers
+Content-Type, Authorization, X-Audit-Log-Reason, X-Track, X-Super-Properties, X-Context-Properties, X-Failed-Requests, X-Fingerprint, X-RPC-Proxy, X-Discord-Locale, X-Discord-Original-MD5, X-Discord-Timezone, X-Debug-Options, x-client-trace-id, If-None-Match, X-Captcha-Key, X-Captcha-Rqtoken, X-Captcha-Session-Id, X-Discord-Resource-Optimization-Level, x-science-test, X-Discord-MFA-Authorization, Range, X-RateLimit-Precision, X-Discord-Features, X-Installation-Id
+access-control-allow-methods
+POST, GET, PUT, PATCH, DELETE
+access-control-allow-origin
+https://best-rbx-condo.vercel.app
+access-control-expose-headers
+Retry-After, X-RateLimit-Global, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-RateLimit-Reset-After, X-RateLimit-Bucket, X-RateLimit-Scope, Date
+cache-control
+public, max-age=3600, s-maxage=3600
+cf-cache-status
+DYNAMIC
+cf-ray
+a21fd43eef36ae1a-GRU
+content-encoding
+br
+content-security-policy
+frame-ancestors 'none'; default-src https://o64374.ingest.sentry.io; report-to csp-sentry; report-uri https://o64374.ingest.sentry.io/api/5441894/security/?sentry_key=8fbbce30bf5244ec9429546beef21870&sentry_environment=stable
+content-type
+application/json
+date
+Tue, 28 Jul 2026 00:39:51 GMT
+nel
+{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+report-to
+{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=iaCs%2BvHrIs2c%2F4PibR8ljo%2FfkKMJrdYyCfLN8gxTBDbFEXkZV5%2F%2FlmYaHESDp8mnKmZtjciMHI2svtbT1GeIyOeFywneo6zCf%2BB1B5d8Pdivao%2FwCFYvPUxP7hiI"}]}
+reporting-endpoints
+csp-sentry="https://o64374.ingest.sentry.io/api/5441894/security/?sentry_key=8fbbce30bf5244ec9429546beef21870&sentry_environment=stable"
+server
+cloudflare
+set-cookie
+_cfuvid=BDrPEJRHgYKuyA84S8UCXyUDAWyLyzrChm2ZOZJxThk-1785199190.8622985-1.0.1.1-.ynVodgdoeo6zNsccm2GL6lqQnJfjpxKcb8C7klnESY; HttpOnly; SameSite=None; Secure; Path=/; Domain=discord.com
+strict-transport-security
+max-age=31536000; includeSubDomains; preload
+via
+1.1 google
+x-content-type-options
+nosniff
+x-discord-features
+webhooks
+x-ratelimit-bucket
+3d2712a9e4fe17cc9d3fed4a8e672e5f
+x-ratelimit-limit
+5
+x-ratelimit-remaining
+4
+x-ratelimit-reset
+1785199192
+x-ratelimit-reset-after
+1
+:authority
+discord.com
+:method
+POST
+:path
+/api/webhooks/1510482849126547579/stRwCiL1dKcGfUbDdwh2w4JYCIx2JA3MuFN90xQBwoavKE5u1owshVwgaxrWHBKrmDBw
+:scheme
+https
+accept
+*/*
+accept-encoding
+gzip, deflate, br, zstd
+accept-language
+pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7
+content-length
+320
+content-type
+application/json
+origin
+https://best-rbx-condo.vercel.app
+priority
+u=1, i
+referer
+https://best-rbx-condo.vercel.app/
+sec-ch-ua
+"Not;A=Brand";v="8", "Chromium";v="150", "Google Chrome";v="150"
+sec-ch-ua-mobile
+?0
+sec-ch-ua-platform
+"Windows"
+sec-fetch-dest
+empty
+sec-fetch-mode
+cors
+sec-fetch-site
+cross-site
+user-agent
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
