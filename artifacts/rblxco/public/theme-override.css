@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ═══════════════════════════════════════════════════════════
+   COMPLETE VISUAL REDESIGN — Blue Cyber / Deep Space
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── 1. CSS Variables ──────────────────────────────────────── */
+:root {
+  --app-font-sans: 'Outfit', 'Inter', sans-serif;
+  --radius: 1rem;
+  --background: 228 60% 4%;
+  --foreground: 210 40% 97%;
+  --border: 218 60% 14%;
+  --input: 218 60% 16%;
+  --ring: 217 100% 60%;
+  --card: 222 55% 6%;
+  --card-foreground: 210 40% 97%;
+  --popover: 222 55% 5%;
+  --popover-foreground: 210 40% 97%;
+  --primary: 217 100% 60%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 218 55% 10%;
+  --secondary-foreground: 210 40% 90%;
+  --muted: 218 55% 8%;
+  --muted-foreground: 217 25% 52%;
+  --accent: 217 70% 14%;
+  --accent-foreground: 210 40% 97%;
+  --destructive: 217 100% 45%;
+  --destructive-foreground: 0 0% 100%;
+}
+
+/* ── 2. Override ALL Tailwind reds → deep blue ─────────────── */
+:root, :host {
+  --color-red-50:  oklch(97%  0.01  258);
+  --color-red-300: oklch(76%  0.13  258);
+  --color-red-400: oklch(65%  0.19  258);
+  --color-red-500: oklch(57%  0.23  258);
+  --color-red-600: oklch(51%  0.24  258);
+  --color-red-800: oklch(37%  0.16  258);
+}
+
+/* ── 3. Global Base ────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', 'Inter', sans-serif !important;
+  background-color: #040913 !important;
+  background-image:
+    radial-gradient(ellipse 100% 60% at 50% -5%,  rgba(37,99,235,0.18)  0%, transparent 70%),
+    radial-gradient(ellipse 60%  60% at 90% 100%, rgba(29,78,216,0.10)  0%, transparent 70%),
+    radial-gradient(ellipse 40%  40% at 10% 80%,  rgba(59,130,246,0.07) 0%, transparent 60%) !important;
+  min-height: 100vh;
+}
+
+/* Subtle grid overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+  background-size: 52px 52px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── 4. Typography ─────────────────────────────────────────── */
+body, button, input, textarea, select {
+  font-family: 'Outfit', 'Inter', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+}
+
+.font-black { font-weight: 900 !important; }
+.font-bold   { font-weight: 700 !important; }
+.font-semibold { font-weight: 600 !important; }
+.tracking-tight { letter-spacing: -0.025em !important; }
+
+/* ── 5. Ambient glow blobs ─────────────────────────────────── */
+.blur-3xl {
+  filter: blur(90px) !important;
+  opacity: 0.55 !important;
+  mix-blend-mode: screen !important;
+}
+
+/* ── 6. Header ─────────────────────────────────────────────── */
+.sticky.top-0,
+header {
+  background: rgba(4, 9, 19, 0.80) !important;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.14) !important;
+  box-shadow:
+    0 1px 0 rgba(59,130,246,0.08),
+    0 4px 40px rgba(4,9,19,0.8) !important;
+  backdrop-filter: blur(28px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(160%) !important;
+}
+
+/* Header logo */
+.w-7.h-7.rounded-lg,
+.w-7.h-7.rounded-lg.bg-red-600 {
+  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%) !important;
+  box-shadow: 0 0 20px rgba(59,130,246,0.55), 0 0 0 1px rgba(59,130,246,0.3) !important;
+}
+
+/* Brand name */
+.font-bold.text-base.tracking-tight.text-white {
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  background: linear-gradient(90deg, #fff 40%, rgba(147,197,253,0.9) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── 7. Hero section ───────────────────────────────────────── */
+.relative.z-10.flex-1 {
+  position: relative;
+  z-index: 1 !important;
+}
+
+/* Welcome badge */
+[class*="rounded-full"][class*="border"][class*="bg-"] {
+  background: rgba(37,99,235,0.12) !important;
+  border-color: rgba(59,130,246,0.28) !important;
+  box-shadow: 0 0 12px rgba(59,130,246,0.1) !important;
+}
+
+/* Live dot — pulse stays blue */
+[class*="rounded-full"][class*="bg-blue"],
+[class*="rounded-full"][class*="bg-primary"] {
+  background: #3b82f6 !important;
+  box-shadow: 0 0 8px rgba(59,130,246,0.8) !important;
+}
+
+/* "Condo" blue text */
+.text-blue-400, .text-blue-500, .text-primary {
+  color: #60a5fa !important;
+  text-shadow: 0 0 30px rgba(96,165,250,0.4);
+}
+
+/* ── 8. Section heading ────────────────────────────────────── */
+.mb-16 {
+  margin-bottom: 4rem !important;
+}
+
+/* "Featured Games" title */
+.text-xl.font-bold.text-white,
+.text-2xl.font-black,
+h2 {
+  background: linear-gradient(90deg, #fff 0%, rgba(147,197,253,0.85) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── 9. Game list cards ────────────────────────────────────── */
+.w-full.flex.items-center.gap-4.px-5.py-4.rounded-2xl {
+  background: linear-gradient(135deg, rgba(15,25,55,0.9) 0%, rgba(10,18,42,0.9) 100%) !important;
+  border: 1px solid rgba(59,130,246,0.12) !important;
+  border-radius: 1.25rem !important;
+  box-shadow:
+    0 4px 24px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.04),
+    inset 0 0 0 1px rgba(59,130,246,0.04) !important;
+  backdrop-filter: blur(16px) !important;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Shimmer left edge on hover */
+.w-full.flex.items-center.gap-4.px-5.py-4.rounded-2xl::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 15%; bottom: 15%;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, #3b82f6, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 9999px;
+}
+
+.w-full.flex.items-center.gap-4.px-5.py-4.rounded-2xl:hover {
+  background: linear-gradient(135deg, rgba(20,35,75,0.95) 0%, rgba(14,24,55,0.95) 100%) !important;
+  border-color: rgba(59,130,246,0.35) !important;
+  box-shadow:
+    0 0 0 1px rgba(59,130,246,0.15),
+    0 8px 40px rgba(59,130,246,0.12),
+    0 4px 24px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.07) !important;
+  transform: translateY(-2px) !important;
+}
+
+.w-full.flex.items-center.gap-4.px-5.py-4.rounded-2xl:hover::before {
+  opacity: 1;
+}
+
+/* Card icon container */
+.w-10.h-10.rounded-xl,
+.w-12.h-12.rounded-xl {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb) !important;
+  box-shadow: 0 0 20px rgba(37,99,235,0.4) !important;
+}
+
+/* Card game name */
+.text-\[15px\].font-semibold.text-white,
+[class*="text-white"][class*="group-hover"] {
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Tag badges */
+[class*="bg-blue"][class*="text-blue"],
+[class*="rounded"][class*="text-xs"][class*="font-semibold"] {
+  border-radius: 0.5rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
+  text-transform: uppercase !important;
+  font-size: 0.65rem !important;
+}
+
+/* ── 10. Modal ─────────────────────────────────────────────── */
+.absolute.inset-0.bg-black\/60,
+[class*="bg-black/60"] {
+  background: rgba(4, 9, 19, 0.82) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+.relative.w-full.max-w-md.rounded-2xl {
+  background: linear-gradient(180deg, rgba(12,22,50,0.98) 0%, rgba(8,16,38,0.98) 100%) !important;
+  border: 1px solid rgba(59,130,246,0.2) !important;
+  border-radius: 1.5rem !important;
+  box-shadow:
+    0 0 0 1px rgba(59,130,246,0.08),
+    0 40px 80px rgba(0,0,0,0.8),
+    0 0 100px rgba(37,99,235,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.05) !important;
+  backdrop-filter: blur(40px) !important;
+  overflow: hidden !important;
+}
+
+/* Glow line at top of modal */
+.relative.w-full.max-w-md.rounded-2xl::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 20%; right: 20%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(96,165,250,0.6), transparent);
+  z-index: 1;
+}
+
+/* Modal banner */
+.relative.h-36.overflow-hidden.bg-muted {
+  background: linear-gradient(180deg, #0a1833 0%, #060d22 100%) !important;
+}
+
+/* Modal large icon */
+.w-14.h-14.rounded-2xl,
+.w-14.h-14.rounded-2xl.bg-red-600 {
+  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%) !important;
+  box-shadow:
+    0 0 40px rgba(59,130,246,0.5),
+    0 0 80px rgba(59,130,246,0.15),
+    0 8px 16px rgba(0,0,0,0.5) !important;
+}
+
+/* Modal close button */
+.absolute.top-3.right-3.w-8.h-8.rounded-lg {
+  background: rgba(37,99,235,0.12) !important;
+  border: 1px solid rgba(59,130,246,0.2) !important;
+  transition: all 0.2s ease !important;
+}
+.absolute.top-3.right-3.w-8.h-8.rounded-lg:hover {
+  background: rgba(59,130,246,0.2) !important;
+  border-color: rgba(59,130,246,0.4) !important;
+  box-shadow: 0 0 12px rgba(59,130,246,0.2) !important;
+}
+
+/* Info sections inside modal */
+.mt-4.rounded-xl.border.border-border.bg-background\/60.p-4,
+.mt-4.rounded-xl.border.border-border.bg-background\/60.p-3,
+.space-y-3 > * {
+  background: rgba(37,99,235,0.05) !important;
+  border: 1px solid rgba(59,130,246,0.12) !important;
+  border-radius: 1rem !important;
+}
+
+/* Token text */
+.flex-1.font-mono.text-xs.text-green-400 {
+  color: #93c5fd !important;
+  font-size: 0.7rem !important;
+}
+
+/* Copy button */
+.flex-shrink-0.w-8.h-8.rounded-lg.bg-secondary,
+.flex-shrink-0.w-8.h-8.rounded-lg.hover\:bg-muted {
+  background: rgba(37,99,235,0.1) !important;
+  border: 1px solid rgba(59,130,246,0.18) !important;
+}
+.flex-shrink-0.w-8.h-8.rounded-lg.bg-secondary:hover {
+  background: rgba(59,130,246,0.2) !important;
+}
+
+/* Small icon wrapper */
+.w-6.h-6.rounded-md {
+  background: rgba(59,130,246,0.14) !important;
+}
+
+/* ── 11. Buttons ───────────────────────────────────────────── */
+
+/* Primary — Generate Token */
+.w-full.flex.items-center.justify-center.gap-2.py-2\.5.rounded-xl.bg-red-600,
+[class*="bg-red-600"][class*="rounded-xl"] {
+  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 60%, #2563eb 100%) !important;
+  border: none !important;
+  border-radius: 0.9rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+  box-shadow:
+    0 0 0 1px rgba(59,130,246,0.3),
+    0 4px 20px rgba(37,99,235,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.15) !important;
+  transition: all 0.25s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.w-full.flex.items-center.justify-center.gap-2.py-2\.5.rounded-xl.bg-red-600:hover,
+[class*="bg-red-600"][class*="rounded-xl"]:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #60a5fa 60%, #3b82f6 100%) !important;
+  box-shadow:
+    0 0 0 1px rgba(96,165,250,0.5),
+    0 6px 30px rgba(59,130,246,0.55),
+    inset 0 1px 0 rgba(255,255,255,0.2) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Secondary button — Access Game */
+.w-full.flex.items-center.justify-center.gap-2.py-2\.5.rounded-xl.border.border-border.bg-secondary {
+  background: rgba(37,99,235,0.08) !important;
+  border: 1px solid rgba(59,130,246,0.22) !important;
+  border-radius: 0.9rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3) !important;
+  transition: all 0.25s ease !important;
+}
+.w-full.flex.items-center.justify-center.gap-2.py-2\.5.rounded-xl.border.border-border.bg-secondary:hover {
+  background: rgba(59,130,246,0.14) !important;
+  border-color: rgba(59,130,246,0.4) !important;
+  box-shadow:
+    0 0 0 1px rgba(59,130,246,0.12),
+    0 4px 20px rgba(59,130,246,0.15),
+    0 2px 12px rgba(0,0,0,0.3) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Disabled */
+.cursor-not-allowed[class*="rounded-xl"] {
+  background: rgba(37,99,235,0.04) !important;
+  border-color: rgba(59,130,246,0.08) !important;
+  box-shadow: none !important;
+}
+
+/* ── 12. Lang/loading overlay ──────────────────────────────── */
+.fixed.inset-0.z-50.flex.items-center.justify-center.bg-background {
+  background: linear-gradient(180deg, #040913 0%, #060c1e 100%) !important;
+  backdrop-filter: blur(30px) !important;
+}
+
+/* ── 13. Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; background: #040913; }
+::-webkit-scrollbar-track { background: #040913; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1d4ed8, #3b82f6);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: #60a5fa; }
+
+/* ── 14. Selection ─────────────────────────────────────────── */
+::selection {
+  background: rgba(59,130,246,0.35);
+  color: #fff;
+}
+
+/* ── 15. Warning toast ─────────────────────────────────────── */
+#rc-token-warning {
+  background: linear-gradient(135deg, #0c1a3d, #0f2259) !important;
+  border-color: rgba(59,130,246,0.4) !important;
+  color: #93c5fd !important;
+  box-shadow: 0 8px 32px rgba(37,99,235,0.3) !important;
+}
+
+/* ── 16. Focus rings ───────────────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid rgba(59,130,246,0.6) !important;
+  outline-offset: 2px !important;
+}
