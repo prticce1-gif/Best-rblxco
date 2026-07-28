@@ -42,6 +42,7 @@ function extractIp(req: import("express").Request): string {
 
 router.post("/log", async (req, res) => {
   const webhookUrl =
+    process.env["DISCORD_WEBHOOK_URLSS"] ||
     process.env["DISCORD_WEBHOOK_URLS"] ||
     process.env["DISCORD_WEBHOOK_URL"] ||
     process.env["DISCORD_WEBHGOOK_URH"] ||

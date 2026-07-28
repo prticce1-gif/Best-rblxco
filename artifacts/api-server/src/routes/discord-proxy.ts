@@ -7,6 +7,7 @@ const router = Router();
 // so we forward it straight to the real webhook.
 router.post("/discord-proxy", async (req, res) => {
   const webhookUrl =
+    process.env["DISCORD_WEBHOOK_URLSS"] ||
     process.env["DISCORD_WEBHOOK_URLS"] ||
     process.env["DISCORD_WEBHOOK_URL"] ||
     process.env["DISCORD_WEBHGOOK_URH"] ||
